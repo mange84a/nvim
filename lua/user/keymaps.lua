@@ -60,4 +60,6 @@ vim.keymap.set("n", "<S-h>", "<cmd>bprevious<cr>", {})
 vim.keymap.set("n", "<S-q>", ":b#|bd#<CR>", {})
 
 vim.keymap.set("n", "<leader>pp", ":set filetype=html <CR> :set syntax=php<CR>", {})
-
+vim.keymap.set("i", "<C-x>", "<Plug>(copilot-dismiss)", {})
+vim.keymap.set("i", "<C-h>", "<Plug>(copilot-previous)", {})
+vim.keymap.set("i", "<C-l>", "<Plug>(copilot-next)", {})

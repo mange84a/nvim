@@ -60,7 +60,9 @@ return packer.startup(function(use)
     
     use {'akinsho/bufferline.nvim', commit = 'e70be6232f632d16d2412b1faf85554285036278'}
     
+    use {'github/copilot.vim', commit = 'c7d166ebda265370f38cec374e33f02eeec2f857'}
     -- Put this at the end after all plugins
+    
     if PACKER_BOOTSTRAP then
         require("packer").sync()
     end

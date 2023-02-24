@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/monk/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
+  ["copilot.vim"] = {
+    loaded = true,
+    path = "/home/monk/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    url = "https://github.com/github/copilot.vim"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/monk/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
