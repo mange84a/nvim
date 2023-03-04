@@ -44,23 +44,31 @@ return packer.startup(function(use)
     -- My plugins here
   
     --packer stuff
-    use { "wbthomason/packer.nvim", commit = "6afb67460283f0e990d35d229fd38fdc04063e0a" } -- Have packer manage itself
-    use { "nvim-lua/popup.nvim",    commit = "b7404d35d5d3548a82149238289fa71f7f6de4ac" } -- An implementation of the Popup API from vim in Neovim
-    use { "nvim-lua/plenary.nvim",  commit = "4b7e52044bbb84242158d977a50c4cbcd85070c7" } -- Useful lua functions used ny lots of plugins
-    use { "nvim-tree/nvim-web-devicons", commit = "a8cf88cbdb5c58e2b658e179c4b2aa997479b3da" } 
-    use { "ellisonleao/gruvbox.nvim", commit = "24f9e795bfac5fabbaba703116e747dcf2ad8d2f" } -- Colorscheme
+    use { "wbthomason/packer.nvim" } -- Have packer manage itself
+    use { "nvim-lua/popup.nvim" } -- An implementation of the Popup API from vim in Neovim
+    use { "nvim-lua/plenary.nvim" } -- Useful lua functions used ny lots of plugins
+    use { "nvim-tree/nvim-web-devicons" } 
+    use { "ellisonleao/gruvbox.nvim" } -- Colorscheme
     
-    use {'nvim-treesitter/nvim-treesitter', run = function() require('nvim-treesitter.install').update({ with_sync = true }) end, commit = "c8533707679b99dc80d5f46f7b519081fb9c1ac9" } --Syntax
+    use {'nvim-treesitter/nvim-treesitter', run = function() require('nvim-treesitter.install').update({ with_sync = true }) end } --Syntax
 
-    use { "nvim-tree/nvim-tree.lua", commit = "c446527056e92a57b51e2f79be47c28ba8ed43e4" }
-    use { "lewis6991/gitsigns.nvim", commit = "2c6f96dda47e55fa07052ce2e2141e8367cbaaf2" }
-    use { "nvim-lualine/lualine.nvim", commit = "edca2b03c724f22bdc310eee1587b1523f31ec7c" }
+    use { "nvim-tree/nvim-tree.lua" }
+    use { "lewis6991/gitsigns.nvim" }
+    use { "nvim-lualine/lualine.nvim" }
 
-    use { "nvim-telescope/telescope.nvim", commit = "f174a0367b4fc7cb17710d867e25ea792311c418" }
+    use { "nvim-telescope/telescope.nvim" }
     
-    use {'akinsho/bufferline.nvim', commit = 'e70be6232f632d16d2412b1faf85554285036278'}
-    
-    use {'github/copilot.vim', commit = 'c7d166ebda265370f38cec374e33f02eeec2f857'}
+    use {'akinsho/bufferline.nvim' }
+
+    -- Autocomplete
+    use { 'neovim/nvim-lspconfig' } 
+    use { 'hrsh7th/cmp-nvim-lsp' }
+    use { 'hrsh7th/nvim-cmp' }
+    use { 'hrsh7th/cmp-buffer' }
+    use { 'hrsh7th/cmp-path' }
+
+    --Copilot
+    use { 'github/copilot.vim' }
     -- Put this at the end after all plugins
     
     if PACKER_BOOTSTRAP then

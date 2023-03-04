@@ -8,3 +8,5 @@ require "user.plugins.gruvbox"
 require "user.plugins.lualine"
 require "user.plugins.telescope"
 require "user.plugins.bufferline"
+require "user.plugins.cmp"
+
