@@ -19,7 +19,7 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Normal --
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<leader>e", ":Vexplore<cr>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -59,7 +59,28 @@ vim.keymap.set("n", "<S-l>", "<cmd>bnext<cr>", {})
 vim.keymap.set("n", "<S-h>", "<cmd>bprevious<cr>", {})
 vim.keymap.set("n", "<S-q>", ":b#|bd#<CR>", {})
 
+-- Bind neocodeium
+-- clear
+vim.keymap.set("i", "<C-c>", function()
+    require("neocodeium").clear()
+end)
+
+-- accept
+vim.keymap.set("i", "<C-a>", function()
+    require("neocodeium").accept()
+end)
+
+-- accept word
+vim.keymap.set("i", "<C-w>", function()
+    require("neocodeium").accept_word()
+end)
+
+-- accept line
+vim.keymap.set("i", "<C-l>", function()
+    require("neocodeium").accept_line()
+end)
+
+-- Open chat
+vim.keymap.set("n", "<leader>cc", ":NeoCodeium chat<CR>", {})
+
 vim.keymap.set("n", "<leader>pp", ":set filetype=html <CR> :set syntax=php<CR>", {})
-vim.keymap.set("i", "<C-x>", "<Plug>(copilot-dismiss)", {})
-vim.keymap.set("i", "<C-h>", "<Plug>(copilot-previous)", {})
-vim.keymap.set("i", "<C-l>", "<Plug>(copilot-next)", {})

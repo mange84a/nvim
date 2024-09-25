@@ -84,21 +84,6 @@ _G.packer_plugins = {
     path = "/home/monk/.local/share/nvim/site/pack/packer/start/cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
   },
-  ["cmp-nvim-lsp"] = {
-    loaded = true,
-    path = "/home/monk/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
-    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
-  },
-  ["cmp-path"] = {
-    loaded = true,
-    path = "/home/monk/.local/share/nvim/site/pack/packer/start/cmp-path",
-    url = "https://github.com/hrsh7th/cmp-path"
-  },
-  ["copilot.vim"] = {
-    loaded = true,
-    path = "/home/monk/.local/share/nvim/site/pack/packer/start/copilot.vim",
-    url = "https://github.com/github/copilot.vim"
-  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/monk/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
@@ -113,6 +98,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/monk/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  neocodeium = {
+    loaded = true,
+    path = "/home/monk/.local/share/nvim/site/pack/packer/start/neocodeium",
+    url = "https://github.com/monkoose/neocodeium"
   },
   ["nvim-cmp"] = {
     loaded = true,

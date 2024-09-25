@@ -23,7 +23,7 @@ vim.opt.shiftwidth = 4                          -- the number of spaces inserted
 vim.opt.tabstop = 4                             -- insert 2 spaces for a tab
 vim.opt.cursorline = true                       -- highlight the current line
 vim.opt.number = true                           -- set numbered lines
-vim.opt.relativenumber = false                  -- set relative numbered lines
+vim.opt.relativenumber = true                   -- set relative numbered lines
 vim.opt.numberwidth = 4                         -- set number column width to 2 {default 4}
 vim.opt.signcolumn = "yes"                      -- always show the sign column, otherwise it would shift the text each time
 vim.opt.wrap = false                            -- display lines as one long line
@@ -32,6 +32,7 @@ vim.opt.sidescrolloff = 8
 vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
 vim.opt.termguicolors = true
 vim.opt.shortmess:append "c"
-
-vim.cmd "set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣"
-
+vim.opt.list = true
+vim.cmd "set listchars=eol:¬,tab:>·,trail:~,extends:…,precedes:<,multispace:."
+vim.cmd "set laststatus=3"
+--set netrw default view to tree

@@ -56,21 +56,18 @@ return packer.startup(function(use)
     use { "lewis6991/gitsigns.nvim" }
     use { "nvim-lualine/lualine.nvim" }
 
-    use { "nvim-telescope/telescope.nvim" }
+    use { "nvim-telescope/telescope.nvim", commit="776b509f80dd49d8205b9b0d94485568236d1192" }
     
     use {'akinsho/bufferline.nvim' }
 
     -- Autocomplete
     use { 'neovim/nvim-lspconfig' } 
-    use { 'hrsh7th/cmp-nvim-lsp' }
     use { 'hrsh7th/nvim-cmp' }
     use { 'hrsh7th/cmp-buffer' }
-    use { 'hrsh7th/cmp-path' }
 
-    --Copilot
-    use { 'github/copilot.vim' }
-    -- Put this at the end after all plugins
-    
+    -- AI completion
+    use { 'monkoose/neocodeium' }
+
     if PACKER_BOOTSTRAP then
         require("packer").sync()
     end
