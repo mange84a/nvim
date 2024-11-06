@@ -60,11 +60,6 @@ vim.keymap.set("n", "<S-h>", "<cmd>bprevious<cr>", {})
 vim.keymap.set("n", "<S-q>", ":b#|bd#<CR>", {})
 
 -- Bind neocodeium
--- clear
-vim.keymap.set("i", "<C-c>", function()
-    require("neocodeium").clear()
-end)
-
 -- accept
 vim.keymap.set("i", "<C-a>", function()
     require("neocodeium").accept()
@@ -80,7 +75,21 @@ vim.keymap.set("i", "<C-l>", function()
     require("neocodeium").accept_line()
 end)
 
+-- Circle next
+vim.keymap.set("i", "<C-c>", function()
+    require("neocodeium").cycle_or_complete(1)
+end)
+
+-- Clear
+vim.keymap.set("i", "<C-x>", function()
+    require("neocodeium").clear()
+end)
+
 -- Open chat
 vim.keymap.set("n", "<leader>cc", ":NeoCodeium chat<CR>", {})
 
 vim.keymap.set("n", "<leader>pp", ":set filetype=html <CR> :set syntax=php<CR>", {})
+
+
+-- Oil
+vim.keymap.set("n", "<leader>e", "<CMD>Oil<CR>", { desc = "Open parent directory" })

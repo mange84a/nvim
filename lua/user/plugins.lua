@@ -49,8 +49,8 @@ return packer.startup(function(use)
     use { "nvim-lua/plenary.nvim" } -- Useful lua functions used ny lots of plugins
     use { "nvim-tree/nvim-web-devicons" } 
     use { "ellisonleao/gruvbox.nvim" } -- Colorscheme
-    
-    use {'nvim-treesitter/nvim-treesitter', run = function() require('nvim-treesitter.install').update({ with_sync = true }) end } --Syntax
+    use { "catppuccin/nvim", as = "catppuccin" }    
+    --use {'nvim-treesitter/nvim-treesitter', run = function() require('nvim-treesitter.install').update({ with_sync = true }) end } --Syntax
 
     use { "nvim-tree/nvim-tree.lua" }
     use { "lewis6991/gitsigns.nvim" }
@@ -59,8 +59,11 @@ return packer.startup(function(use)
     use { "nvim-telescope/telescope.nvim", commit="776b509f80dd49d8205b9b0d94485568236d1192" }
     
     use {'akinsho/bufferline.nvim' }
+    use { 'kylechui/nvim-surround', tag = "*" }
+    use { 'stevearc/oil.nvim' }
+    use { "williamboman/mason.nvim" }
+    use { "williamboman/mason-lspconfig.nvim" }
 
-    -- Autocomplete
     use { 'neovim/nvim-lspconfig' } 
     use { 'hrsh7th/nvim-cmp' }
     use { 'hrsh7th/cmp-buffer' }
