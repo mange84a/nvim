@@ -59,37 +59,47 @@ vim.keymap.set("n", "<S-l>", "<cmd>bnext<cr>", {})
 vim.keymap.set("n", "<S-h>", "<cmd>bprevious<cr>", {})
 vim.keymap.set("n", "<S-q>", ":b#|bd#<CR>", {})
 
--- Bind neocodeium
--- accept
-vim.keymap.set("i", "<C-a>", function()
-    require("neocodeium").accept()
-end)
+--Next
+vim.keymap.set("i", "<C-j>", "copilot#Next()", {expr=true, silent=true})
+--Prev
+vim.keymap.set("i", "<C-k>", "copilot#Previous()", {expr=true, silent=true})
+--accept
+vim.keymap.set("i", "<C-a>", "copilot#Accept()", {noremap = true, replace_keycodes = false, expr=true, silent=true})
+--accept word
+vim.keymap.set("i", "<C-w>", "copilot#AcceptWord()", {expr=true, silent=true,  replace_keycodes = false})
+--accept line
+vim.keymap.set("i", "<C-l>", "copilot#AcceptLine()", {expr=true, silent=true})
+--Clear
+vim.keymap.set("i", "<C-x>", "copilot#Clear()", {expr=true, silent=true})
 
--- accept word
-vim.keymap.set("i", "<C-w>", function()
-    require("neocodeium").accept_word()
-end)
 
--- accept line
-vim.keymap.set("i", "<C-l>", function()
-    require("neocodeium").accept_line()
-end)
+--Open chat
+vim.keymap.set("n", "<leader>cc", ":CopilotChatToggle<CR>", { silent = true })
+vim.keymap.set("v", "<leader>cc", ":CopilotChatToggle<CR>", { silent = true })
 
--- Circle next
-vim.keymap.set("i", "<C-c>", function()
-    require("neocodeium").cycle_or_complete(1)
-end)
+-- Quickchat
+local actions = require("CopilotChat.actions")
+local telescope_integration = require("CopilotChat.integrations.telescope")
 
--- Clear
-vim.keymap.set("i", "<C-x>", function()
-    require("neocodeium").clear()
-end)
 
--- Open chat
-vim.keymap.set("n", "<leader>cc", ":NeoCodeium chat<CR>", {})
+vim.keymap.set("v", "<leader>cp", function()
+  telescope_integration.pick(actions.prompt_actions({
+    selection = require("CopilotChat.select").visual,
+  }))
+end, { desc = "CopilotChat - Prompt actions" })
+
+
+vim.keymap.set("n", "<leader>cp", function()
+  telescope_integration.pick(actions.prompt_actions())
+end, { desc = "CopilotChat - Prompt actions" })
+
+vim.keymap.set("n", "<leader>cq", function()
+  local input = vim.fn.input("Quick Chat: ")
+  if input ~= "" then
+    require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
+  end
+end, { desc = "CopilotChat - Quick chat" })
+
 
 vim.keymap.set("n", "<leader>pp", ":set filetype=html <CR> :set syntax=php<CR>", {})
-
-
--- Oil
 vim.keymap.set("n", "<leader>e", "<CMD>Oil<CR>", { desc = "Open parent directory" })

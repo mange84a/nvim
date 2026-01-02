@@ -50,14 +50,14 @@ return packer.startup(function(use)
     use { "nvim-tree/nvim-web-devicons" } 
     use { "ellisonleao/gruvbox.nvim" } -- Colorscheme
     use { "catppuccin/nvim", as = "catppuccin" }    
-    --use {'nvim-treesitter/nvim-treesitter', run = function() require('nvim-treesitter.install').update({ with_sync = true }) end } --Syntax
+    use {'nvim-treesitter/nvim-treesitter', run = function() require('nvim-treesitter.install').update({ with_sync = true }) end } --Syntax
 
     use { "nvim-tree/nvim-tree.lua" }
     use { "lewis6991/gitsigns.nvim" }
     use { "nvim-lualine/lualine.nvim" }
 
     use { "nvim-telescope/telescope.nvim", commit="776b509f80dd49d8205b9b0d94485568236d1192" }
-    
+
     use {'akinsho/bufferline.nvim' }
     use { 'kylechui/nvim-surround', tag = "*" }
     use { 'stevearc/oil.nvim' }
@@ -68,8 +68,12 @@ return packer.startup(function(use)
     use { 'hrsh7th/nvim-cmp' }
     use { 'hrsh7th/cmp-buffer' }
 
-    -- AI completion
-    use { 'monkoose/neocodeium' }
+    -- AI completion copilot
+    use { 'github/copilot.vim' }
+    -- Chat with copilot
+    use { 'CopilotC-Nvim/CopilotChat.nvim' }
+    -- Multiple cursor
+    use { 'mg979/vim-visual-multi' }
 
     if PACKER_BOOTSTRAP then
         require("packer").sync()
